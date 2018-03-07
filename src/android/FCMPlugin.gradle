@@ -1,21 +1,13 @@
-android {
-	defaultConfig {
-				multiDexEnabled true
-	}
-}
-
 buildscript {
 	repositories {
             jcenter()
-						maven { url 'https://maven.google.com' }
+			mavenLocal()
         }
     dependencies {
         classpath 'com.android.tools.build:gradle:+'
-        classpath 'com.google.gms:google-services:3.1.1'
+        classpath 'com.google.gms:google-services:+'
     }
 }
 // apply plugin: 'com.google.gms.google-services'
 // class must be used instead of id(string) to be able to apply plugin from non-root gradle file
-ext.postBuildExtras = {
-    apply plugin: com.google.gms.googleservices.GoogleServicesPlugin
-}
+apply plugin: com.google.gms.googleservices.GoogleServicesPlugin
